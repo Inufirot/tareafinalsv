@@ -14,7 +14,7 @@ public class Localizacion {
 	@Id
 	@GeneratedValue (strategy=GenerationType.IDENTITY)
 	private long id;
-	private char longitud;
+	private char longitud;  
 	private char latitud;
 	@Column(name = "gradoslongitud")
 	private double gradosLongitud;
