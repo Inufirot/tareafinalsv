@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: vespertino
+Build-Jdk: 16.0.2
+Implementation-Title: model proyect
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.sergio
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/model_proyect
+Created-By: Maven Integration for Eclipse
+

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Crear nueva Localizacion</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Crear nueva Localizacion</h1>
+		<br />
+		<form action="#" th:action="@{/savelocalizacion}" th:object="${localizaciones}"
+			method="post">
+
+			<table border="0" cellpadding="10">
+			<tr>				
+					<td>IdLocalizacion</td>
+					<td>
+						<input type="text" th:field="*{id}" readonly="readonly" />
+					</td>
+				</tr>			
+				<tr>				
+					<td>Longitud</td>
+					<td>
+						<input type="text" th:field="*{longitud}" />
+					</td>
+				</tr>
+				<tr>
+					<td>Latitud</td>
+					<td><input type="text" th:field="*{latitud}" /></td>
+				</tr>
+				<tr>
+					<td>GradosLongitud</td>
+					<td><input type="text" th:field="*{gradosLongitud}" /></td>
+				</tr>
+				<tr>
+					<td>GradosLatitud</td>
+					<td><input type="text" th:field="*{gradosLatitud}" /></td>
+				</tr>
+					<td colspan="2"><button type="submit">Save</button> </td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

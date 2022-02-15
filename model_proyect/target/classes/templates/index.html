@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Product Manager</title>
+</head>
+<body>
+<div align="center">
+    <h1>Product List</h1>
+    <a href="newejemplar">Crear nuevo Ejemplar</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>IdEjemplar</th>
+                <th>Edad</th>
+                <th>FechaCompra</th>
+                <th>FechaPlantacion</th>
+                <th>Acciones</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="ejemplares : ${listaEjemplares}">
+            	<td th:text="${ejemplares.id}">IdEjemplar</td>
+                <td th:text="${ejemplares.edad}">Edad</td>
+                <td th:text="${ejemplares.fechaCompra}">FechaCompra</td>
+                <td th:text="${ejemplares.fechaPlantacion}">FechaPlantacion</td>
+               
+                <td>
+                	<a th:href="@{'/editarejemplar/' + ${ejemplares.id}}">Editar</a>
+                	&nbsp;&nbsp;&nbsp;
+                	<a th:href="@{'/eliminarejemplar/' + ${ejemplares.id}}">Borrar</a>
+                </td>
+            </tr>
+            </tbody>
+            </table>
+            
+      <a href="newparcela">Crear nueva Parcela</a>   
+       <br/><br/>
+    	<table border="1" cellpadding="10">  
+    	<thead> 
+             <tr>
+                <th>IdParcelas</th>
+                <th>Nombre</th>
+                <th>Area</th>               
+                <th>Privada</th>
+                
+            </tr>
+             </thead>
+             <tbody>
+                <tr th:each="parcelas : ${listaParcelas}">
+            	<td th:text="${parcelas.id}">IdParcela</td>
+                <td th:text="${parcelas.nombre}">Nombre</td>
+                <td th:text="${parcelas.area}">Area</td>
+                <td th:text="${parcelas.privada}">Privada</td>
+               
+                <td>
+                	<a th:href="@{'/editarparcela/' + ${parcelas.id}}">Editar</a>
+                	&nbsp;&nbsp;&nbsp;
+                	<a th:href="@{'/eliminarparcela/' + ${parcelas.id}}">Borrar</a>
+                </td>
+            </tr>
+            
+            
+            </tbody>
+            </table>
+           
+            </table>
+            <a href="newlozalizacion">Crear nueva Localizacion</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>IdLozalizacion</th>
+                <th>Longitud</th>
+                <th>Latitud</th>
+                <th>GradosLongitud</th>
+                <th>GradosLatitud</th>
+                
+            </tr>
+            </thead>
+            <tbody>
+             <tr th:each="localizaciones : ${listaLocalizaciones}">
+            	<td th:text="${localizaciones.id}">IdLocalizacion</td>
+                <td th:text="${localizaciones.longitud}">Longitud</td>
+                <td th:text="${localizaciones.latitud}">Latitud</td>
+                <td th:text="${localizaciones.gradosLatitud}">GradosLatitud</td>
+                <td th:text="${localizaciones.gradosLongitud}">GradosLongitud</td>
+               
+                <td>
+                	<a th:href="@{'/editarlocalizacion/' + ${localizaciones.id}}">Editar</a>
+                	&nbsp;&nbsp;&nbsp;
+                	<a th:href="@{'/eliminarlocalizacion/' + ${localizaciones.id}}">Borrar</a>
+                </td>
+            </tr>
+            </tbody>
+            </table>
+            
+            
+            
+            <a href="newplanta">Crear nueva Planta</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>IdPlanta</th>
+                <th>Edad</th>
+                
+                
+                <th>Acciones</th>
+                
+            </tr>
+        </thead>
+          <tbody>
+            <tr th:each="planta : ${listaPlantas}">
+            	<td th:text="${planta.id}">IdPlanta</td>
+                <td th:text="${planta.nombre}">Nombre</td>
+               
+               
+                <td>
+                	<a th:href="@{'/editarplanta/' + ${planta.id}}">Editar</a>
+                	&nbsp;&nbsp;&nbsp;
+                	<a th:href="@{'/eliminarplanta/' + ${planta.id}}">Borrar</a>
+                </td>
+            </tr>
+            </tbody>
+            </table>
+       
+            
+          
+            
+          
+        </tbody>
+    </table>
+</div>    
+</body>
+</html>
